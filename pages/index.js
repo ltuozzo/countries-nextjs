@@ -1,5 +1,4 @@
 function CountriesApp(props) {
-    console.log(props);
     return <h1>Countries App</h1>
 }
 
@@ -12,6 +11,7 @@ export async function getStaticProps() {
 
     return {
         props: {
+            // TODO Filter only necessary data
             countries: data,
         }
     }
