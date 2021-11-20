@@ -1,4 +1,5 @@
 function CountriesApp(props) {
+    // TODO Create component CountriesList
     return <h1>Countries App</h1>
 }
 
@@ -7,12 +8,12 @@ export async function getStaticProps() {
         method: 'GET',
     })
 
-    const data = await response.json();
+    const countries = await response.json();
 
     return {
         props: {
             // TODO Filter only necessary data
-            countries: data,
+            countries: countries,
         }
     }
 }

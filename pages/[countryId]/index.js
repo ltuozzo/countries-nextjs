@@ -1,4 +1,5 @@
 function CountryPage() {
+    // TODO Create component CountryDetails
     return <h1>Country Page</h1>
 }
 
@@ -31,7 +32,7 @@ export async function getStaticProps(context) {
     return {
         props: {
             // TODO Filter only necessary data
-            countries: data,
+            country: data,
         }
     }
 }
