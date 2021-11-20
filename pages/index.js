@@ -1,6 +1,10 @@
+import CountriesList from "../components/countriesList/CountriesList";
+
 function CountriesApp(props) {
     // TODO Create component CountriesList
-    return <h1>Countries App</h1>
+    return (
+        <CountriesList countries={props.countries} />
+    )
 }
 
 export async function getStaticProps() {
@@ -13,9 +17,11 @@ export async function getStaticProps() {
     return {
         props: {
             // TODO Filter only necessary data
-            countries: countries,
-        }
-    }
+            countries: countries.map(country => ({
+                name: country.name.common,
+            })),
+        },
+    };
 }
 
 export default CountriesApp;
