@@ -1,6 +1,17 @@
-function CountryPage() {
-    // TODO Create component CountryDetails
-    return <h1>Country Page</h1>
+import CountryDetail from "../../components/countryDetails/CountryDetails";
+
+function CountryPage(props) {
+    return (
+        <CountryDetail
+            flag={props.flag}
+            name={props.name}
+            capital={props.capital}
+            population={props.population}
+            currency={props.currency}
+            languages={props.languages}
+            borders={props.borders}
+        />
+    )
 }
 
 export async function getStaticPaths() {
@@ -23,16 +34,36 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const countryId = context.params.countryId;
 
-    const response = await fetch('https://restcountries.com/v3.1/name/' + countryId, {
+    const response = await fetch('https://restcountries.com/v3.1/all', {
         method: 'GET',
     })
 
-    const data = await response.json();
+    const countries = await response.json();
+
+    const country = countries.find(country => country.name.common === countryId);
+
+    const borderCountries = [];
+
+    country.borders.forEach(border => {
+        const newBorder = countries.find(country => country.cioc === border);
+        if(newBorder){
+            borderCountries.push({
+                name: newBorder.name.common,
+                flag: newBorder.flags.png,
+                population: newBorder.population,
+            })
+        }
+    })
 
     return {
         props: {
-            // TODO Filter only necessary data
-            country: data,
+            flag: country.flags.png,
+            name: country.name.common,
+            capital: country.capital ? country.capital : '',
+            population: country.population,
+            currency: country.currencies[Object.keys(country.currencies)[0]].name,
+            languages: Object.values(country.languages),
+            borders: borderCountries,
         }
     }
 }
