@@ -19,6 +19,9 @@ export async function getStaticProps() {
             // TODO Filter only necessary data
             countries: countries.map(country => ({
                 name: country.name.common,
+                flag: country.flags.png,
+                population: country.population,
+                capital: country.capital ? country.capital : '',
             })),
         },
     };
