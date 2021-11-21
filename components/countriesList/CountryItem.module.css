@@ -1,7 +1,7 @@
 .item {
     margin: 1rem 0;
     cursor: pointer;
-    background-color: white;
+    background-color: #edf6f9;
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -29,24 +29,9 @@
 
 .content h3 {
     font-size: 1.25rem;
-    color: #2c292b;
-}
-
-.actions {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.actions button {
-    font: inherit;
-
-    color: #77002e;
-    border: 1px solid #77002e;
-    background-color: transparent;
-    padding: 0.5rem 1.5rem;
-    border-radius: 4px;
+    color: #006d77;
 }
 
 .item:hover {
-    background-color: #ffe2ed;
+    background-color: #83c5be;
 }

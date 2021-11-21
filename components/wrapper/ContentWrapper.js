@@ -1,12 +1,12 @@
-import {Fragment} from "react";
+import Navigation from "./Navigation";
 import classes from './ContentWrapper.module.css';
 
 function ContentWrapper(props) {
     return (
-        <Fragment>
-            <h1>Countries App</h1>
+        <div >
+            <Navigation />
             <main className={classes.main}>{props.children}</main>
-        </Fragment>
+        </div>
     );
 }
 
