@@ -1,0 +1,20 @@
+.borderCountry {
+    width: 48%;
+    height: 100%;
+    margin-right: 2%;
+    margin-bottom: 10px;
+}
+
+.countryName {
+    font-size: 15px;
+}
+
+.countryDetails {
+    font-size: 12px;
+}
+
+@media (min-width: 768px){
+    .borderCountry {
+        width: 23%;
+    }
+}

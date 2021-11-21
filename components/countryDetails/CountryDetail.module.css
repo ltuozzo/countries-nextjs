@@ -5,3 +5,9 @@
 .countryInformation {
     text-align: left;
 }
+
+.borderContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
