@@ -1,9 +1,16 @@
 import Card from "../card/Card";
 import classes from './BorderCountry.module.css';
+import {useRouter} from "next/router";
 
 function BorderCountry(props) {
+    const router = useRouter();
+
+    function switchCountryHandler() {
+        router.push('/' + props.name);
+    }
+
     return (
-        <div className={classes.borderCountry}>
+        <div className={classes.borderCountry} onClick={switchCountryHandler}>
             <Card>
                 <img
                     src={props.flag}
