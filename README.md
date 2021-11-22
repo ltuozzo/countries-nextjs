@@ -12,23 +12,12 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Important!
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/countries-api.js`.
+The link provided in the documentation [restcountries.eu](https://restcountries.eu/), did not work for me, because I am not in the EU right now. I had to use [restcountries.com](https://restcountries.com/) instead. Keep this in mind if the API connection does not work for you. You might need to change the link manually.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Missing features and general improvements
 
-## Learn More
+Two things I would have added if I had to work on this project for longer, where TypeScript and Scss. Working with those makes everything much smoother, and I later regretted not installing them to begin with.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Animations could use a bit of work too. I only used them to buy time while the country details loads, but with a bit more time I could have added a stagger to all the different cards I displayed, and make everything transition much better.
