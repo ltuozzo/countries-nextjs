@@ -1,10 +1,19 @@
 import classes from './CountryDetail.module.css';
 import Card from "../card/Card";
 import BorderCountry from "./BorderCountry";
+import TweenMax from "gsap";
+import {useRef, useEffect} from 'react';
 
 function CountryDetail(props) {
+    const section = useRef();
+
+    useEffect(() => {
+        TweenMax.to(section.current, 2, {opacity: 1});
+    });
+
+
     return (
-        <section className={classes.detail}>
+        <section className={classes.detail} ref={section}>
             <h2>Country</h2>
             <Card>
                 <img

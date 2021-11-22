@@ -1,3 +1,7 @@
+.detail {
+    opacity: 0;
+}
+
 .detail img {
     width: 100%;
 }
