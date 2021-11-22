@@ -1,16 +1,24 @@
 import CountryDetail from "../../components/countryDetails/CountryDetails";
+import Head from "next/head";
+import {Fragment} from "react";
 
 function CountryPage(props) {
     return (
-        <CountryDetail
-            flag={props.flag}
-            name={props.name}
-            capital={props.capital}
-            population={props.population}
-            currency={props.currency}
-            languages={props.languages}
-            borders={props.borders}
-        />
+        <Fragment>
+            <Head>
+                <title>{props.name}</title>
+                <meta name='description' content={props.name} />
+            </Head>
+            <CountryDetail
+                flag={props.flag}
+                name={props.name}
+                capital={props.capital}
+                population={props.population}
+                currency={props.currency}
+                languages={props.languages}
+                borders={props.borders}
+            />
+        </Fragment>
     )
 }
 

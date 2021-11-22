@@ -1,8 +1,16 @@
 import CountriesList from "../components/countriesList/CountriesList";
+import {Fragment} from "react";
+import Head from "next/head";
 
 function CountriesApp(props) {
     return (
-        <CountriesList countries={props.countries} />
+        <Fragment>
+            <Head>
+                <title>Countries App</title>
+                <meta name='description' content='Explore all the countries of the world' />
+            </Head>
+            <CountriesList countries={props.countries} />
+        </Fragment>
     )
 }
 
