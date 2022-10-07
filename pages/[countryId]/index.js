@@ -52,16 +52,18 @@ export async function getStaticProps(context) {
 
     const borderCountries = [];
 
-    country.borders.forEach(border => {
-        const newBorder = countries.find(country => country.cioc === border);
-        if(newBorder){
-            borderCountries.push({
-                name: newBorder.name.common,
-                flag: newBorder.flags.png,
-                population: newBorder.population,
-            })
-        }
-    })
+    if (country.borders) {
+        country.borders.forEach(border => {
+            const newBorder = countries.find(country => country.cioc === border);
+            if(newBorder){
+                borderCountries.push({
+                    name: newBorder.name.common,
+                    flag: newBorder.flags.png,
+                    population: newBorder.population,
+                })
+            }
+        })
+    }
 
     return {
         props: {
